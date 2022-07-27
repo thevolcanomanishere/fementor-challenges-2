@@ -58,7 +58,7 @@ const Lightbox = ({ images }: { images: string[] }) => {
             </div>
             <div
               onClick={() => setIsShowingLightbox(false)}
-              className="text-orange-400 text-2xl font-bold absolute ml-[555px] -mt-[30px] cursor-pointer"
+              className="text-orange-400 text-2xl font-bold absolute ml-[530px] -mt-[35px] cursor-pointer"
             >
               X
             </div>
