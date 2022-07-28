@@ -32,7 +32,7 @@ const Lightbox = ({ images }: { images: string[] }) => {
   const inactiveStyle = `h-1/5 w-1/5 rounded cursor-pointer`;
 
   const lightBoxStyle = isShowingLightbox
-    ? "fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-10 px-5 overscroll-hidden"
+    ? "fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-10 px-5 overscroll-hidden duration-500"
     : "hidden";
 
   const getCurrentBreakpoint = (): string => {
