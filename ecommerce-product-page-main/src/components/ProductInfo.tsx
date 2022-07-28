@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as IconBasketWhite } from "../../public/icon-cart-white.svg";
 
 export interface IProductInfo {
@@ -10,6 +10,7 @@ export interface IProductInfo {
 }
 
 const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
+  const [count, setCount] = useState(0);
   return (
     <section className="max-w-[480px] flex flex-col mx-auto">
       <div className="mx-8 sm:mx-0">
@@ -34,10 +35,24 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
           </div>
         </div>
         <div className="flex flex-row space-x-5 my-6">
-          <div className="flex flex-row bg-gray-200 space-x-6 px-5 rounded-lg cursor-pointer">
-            <div className="text-orange-400 m-auto text-3xl pb-1">-</div>
-            <div className="m-auto">0</div>
-            <div className="text-orange-400 m-auto text-3xl pb-1">+</div>
+          <div className="flex flex-row bg-gray-200 rounded-lg cursor-pointer">
+            <div
+              onClick={() => {
+                if (count > 0) setCount(count - 1);
+                return;
+              }}
+              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center"
+            >
+              -
+            </div>
+
+            <div className="my-auto w-10 text-center">{count}</div>
+            <div
+              onClick={() => setCount(count + 1)}
+              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center"
+            >
+              +
+            </div>
           </div>
           <button className="bg-[#EF843A] text-white flex flex-row space-x-3 justify-center p-4 w-3/5 rounded-lg  shadow-lg shadow-orange-300">
             <div className="hover:animate-[wiggle_1s_ease-in-out_infinite]">
