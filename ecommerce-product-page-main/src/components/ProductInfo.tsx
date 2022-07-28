@@ -25,12 +25,12 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
         </p>
         <div className="flex flex-row space-x-3 justify-between lg:justify-start max-w-[416px]">
           <div className="flex flex-row lg:flex-col">
-            <h3 className="text-4xl font-semibold">
+            <h2 className="text-4xl font-semibold">
               ${productInfo.price * (productInfo.discountPercentage / 100)}
-            </h3>
-            <h4 className="text-2xl text-gray-400 line-through line-sth hidden lg:block">
+            </h2>
+            <h3 className="text-2xl text-gray-400 line-through line-sth hidden lg:block">
               ${productInfo.price}
-            </h4>
+            </h3>
             <div className="bg-orange-100 rounded h-8 px-1 text-xl text-orange-600 font-bold ml-4 lg:hidden">
               {productInfo.discountPercentage}%
             </div>
@@ -62,11 +62,11 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
               +
             </div>
           </div>
-          <button className="bg-[#EF843A] text-white flex h-14 flex-row space-x-3 justify-center p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300">
-            <div>
+          <button className="bg-[#EF843A] text-white h-14 space-x-3 p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300">
+            <span className=" flex flex-row space-x-3 justify-center">
               <IconBasketWhite />
-            </div>
-            <p className="font-sans">Add to cart</p>
+              <p className="font-sans">Add to cart</p>
+            </span>
           </button>
         </div>
       </div>

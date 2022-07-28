@@ -78,7 +78,7 @@ const Lightbox = ({ images }: { images: string[] }) => {
   };
 
   return (
-    <section className="select-none max-w-[450px] mx-auto">
+    <div className="select-none max-w-[450px] mx-auto">
       <div
         id="breakpoint-sm"
         className="hidden sm:block md:hidden lg:hidden xl:hidden 2xl:hidden w-0 h-0"
@@ -161,7 +161,7 @@ const Lightbox = ({ images }: { images: string[] }) => {
           ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
