@@ -4,18 +4,18 @@ import Lightbox from "./Lightbox";
 
 const Product = () => {
   const images = [
-    `../../public/image-product-1.jpg`,
-    `../../public/image-product-2.jpg`,
-    `../../public/image-product-3.jpg`,
-    `../../public/image-product-4.jpg`,
+    `/image-product-1.jpg`,
+    `/image-product-2.jpg`,
+    `/public/image-product-3.jpg`,
+    `/public/image-product-4.jpg`,
   ];
 
   return (
-    <div className="flex flex-col lg:flex-row mx-auto lg:justify-between mt-20">
+    <div className="flex flex-col lg:space-x-16 lg:flex-row mx-auto lg:justify-between lg:mt-20">
       <Lightbox images={images} />
       <section className="max-w-[480px] flex flex-col mx-auto">
         <div className="mx-8 sm:mx-0">
-          <h3 className="text-orange-400 uppercase mb-6 font-bold mt-16">
+          <h3 className="text-orange-400 uppercase mb-6 font-bold mt-12">
             Sneaker Company
           </h3>
           <h1 className="text-5xl font-bold mb-10">
@@ -28,10 +28,10 @@ const Product = () => {
           </p>
           <div className="flex flex-row space-x-3">
             <div className="flex flex-col">
-              <h4 className="text-4xl font-semibold">$125.00</h4>
-              <h5 className="text-2xl text-gray-400 line-through line-sth">
+              <h3 className="text-4xl font-semibold">$125.00</h3>
+              <h4 className="text-2xl text-gray-400 line-through line-sth">
                 $250.00
-              </h5>
+              </h4>
             </div>
             <div className="bg-orange-100 rounded h-6 px-1 text-orange-600 font-bold">
               50%

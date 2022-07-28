@@ -5,7 +5,7 @@ import Product from "./components/Product";
 
 const App = () => {
   return (
-    <main className="flex flex-col justify-center align-middle mx-auto my-10 max-w-[1000px]">
+    <main className="flex flex-col justify-center align-middle mx-auto my-2 lg:my-10 max-w-[1000px]">
       <Header />
       <Product />
     </main>
