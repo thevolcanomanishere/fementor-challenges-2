@@ -6,8 +6,8 @@ const Product = () => {
   const images = [
     `/image-product-1.jpg`,
     `/image-product-2.jpg`,
-    `/public/image-product-3.jpg`,
-    `/public/image-product-4.jpg`,
+    `/image-product-3.jpg`,
+    `/image-product-4.jpg`,
   ];
 
   return (
@@ -43,7 +43,7 @@ const Product = () => {
               <div className="m-auto">0</div>
               <div className="text-orange-400 m-auto text-3xl pb-1">+</div>
             </div>
-            <button className="bg-orange-400 text-white flex flex-row space-x-3 justify-center p-4 w-3/5 rounded-lg  shadow-lg shadow-orange-300">
+            <button className="bg-[#EF843A] text-white flex flex-row space-x-3 justify-center p-4 w-3/5 rounded-lg  shadow-lg shadow-orange-300">
               <div className="hover:animate-[wiggle_1s_ease-in-out_infinite]">
                 <IconBasketWhite />
               </div>
