@@ -35,13 +35,13 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
           </div>
         </div>
         <div className="flex flex-row space-x-5 my-6">
-          <div className="flex flex-row bg-gray-200 rounded-lg cursor-pointer">
+          <div className="flex flex-row bg-gray-200 rounded-lg ">
             <div
               onClick={() => {
                 if (count > 0) setCount(count - 1);
                 return;
               }}
-              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center"
+              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center cursor-pointer"
             >
               -
             </div>
@@ -49,7 +49,7 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
             <div className="my-auto w-10 text-center">{count}</div>
             <div
               onClick={() => setCount(count + 1)}
-              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center"
+              className="text-orange-400 m-auto text-3xl pb-1 w-10 text-center cursor-pointer"
             >
               +
             </div>
