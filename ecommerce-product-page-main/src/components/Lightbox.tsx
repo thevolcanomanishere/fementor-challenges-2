@@ -31,13 +31,13 @@ const Lightbox = ({ images }: { images: string[] }) => {
   const inactiveStyle = `h-1/5 w-1/5 rounded cursor-pointer`;
 
   const lightBoxStyle = isShowingLightbox
-    ? "fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-10"
+    ? "fixed top-0 left-0 w-full h-full bg-black bg-opacity-75 z-10 overflow-hidden"
     : "hidden";
 
   return (
-    <section className="mx-8 select-none">
+    <section className="mx-8 select-none max-w-[480px]">
       <div className={lightBoxStyle}>
-        <div className="max-w-[550px] flex flex-col mx-auto my-36">
+        <div className="flex flex-col mx-auto my-36">
           <div className="flex flex-row justify-center static">
             <div
               onClick={() => changeImage("previous")}

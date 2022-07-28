@@ -7,18 +7,18 @@ import ImageAvatar from "../../public/image-avatar.png";
 
 const Header = () => {
   return (
-    <header className="flex flex-col">
+    <header className="flex flex-col ml-4 lg:ml-0">
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row space-x-3 ml-5">
-          <div className="my-auto block pt-1 lg:hidden">
+        <div className="flex flex-row">
+          <div className="my-auto block pt-1 mr-6 lg:hidden">
             <IconMenu />
           </div>
           <div className="my-auto">
             <IconLogo />
           </div>
-        </div>
-        <div className="m-auto hidden lg:block">
-          <Nav />
+          <div className="my-auto hidden ml-6  lg:block">
+            <Nav />
+          </div>
         </div>
         <div className=" flex flex-row space-x-10 mr-5">
           <Basket />
