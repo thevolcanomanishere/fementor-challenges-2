@@ -21,21 +21,27 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
         <p className="font-sans my-4 mb-6 text-gray-500">
           {productInfo.description}
         </p>
-        <div className="flex flex-row space-x-3">
-          <div className="flex flex-col">
+        <div className="flex flex-row space-x-3 justify-between lg:justify-start max-w-[416px]">
+          <div className="flex flex-row lg:flex-col">
             <h3 className="text-4xl font-semibold">
               ${productInfo.price * (productInfo.discountPercentage / 100)}
             </h3>
-            <h4 className="text-2xl text-gray-400 line-through line-sth">
+            <h4 className="text-2xl text-gray-400 line-through line-sth hidden lg:block">
               ${productInfo.price}
             </h4>
+            <div className="bg-orange-100 rounded h-8 px-1 text-xl text-orange-600 font-bold ml-4 lg:hidden">
+              {productInfo.discountPercentage}%
+            </div>
           </div>
-          <div className="bg-orange-100 rounded h-6 px-1 text-orange-600 font-bold">
+          <div className="bg-orange-100 rounded h-6 px-1 text-orange-600 font-bold hidden lg:block mt-1">
             {productInfo.discountPercentage}%
           </div>
+          <h4 className="text-2xl text-gray-400 line-through line-sth lg:hidden">
+            ${productInfo.price}
+          </h4>
         </div>
-        <div className="flex flex-row space-x-5 my-6">
-          <div className="flex flex-row bg-gray-200 rounded-lg ">
+        <div className="flex flex-col lg:flex-row lg:space-x-5 my-6">
+          <div className="flex flex-row bg-gray-200 rounded-lg mb-5 h-14">
             <div
               onClick={() => {
                 if (count > 0) setCount(count - 1);
@@ -54,8 +60,8 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
               +
             </div>
           </div>
-          <button className="bg-[#EF843A] text-white flex flex-row space-x-3 justify-center p-4 w-3/5 rounded-lg  shadow-lg shadow-orange-300">
-            <div className="hover:animate-[wiggle_1s_ease-in-out_infinite]">
+          <button className="bg-[#EF843A] text-white flex h-14 flex-row space-x-3 justify-center p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300">
+            <div>
               <IconBasketWhite />
             </div>
             <p className="font-sans">Add to cart</p>
