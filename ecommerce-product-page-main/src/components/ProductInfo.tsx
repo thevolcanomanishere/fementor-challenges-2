@@ -17,7 +17,9 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
         <h3 className="text-orange-400 uppercase mb-6 font-bold mt-12">
           {productInfo.companyName}
         </h3>
-        <h1 className="text-5xl font-bold mb-10">{productInfo.productName}</h1>
+        <h1 className="text-5xl font-semibold mb-10">
+          {productInfo.productName}
+        </h1>
         <p className="font-sans my-4 mb-6 text-gray-500">
           {productInfo.description}
         </p>
