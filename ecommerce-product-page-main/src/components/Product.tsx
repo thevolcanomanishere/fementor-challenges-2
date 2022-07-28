@@ -20,7 +20,7 @@ const Product = () => {
   };
 
   return (
-    <div className="flex flex-col lg:space-x-16 lg:flex-row mx-auto lg:justify-between lg:mt-20">
+    <div className="flex flex-col lg:space-x-20 lg:flex-row mx-auto lg:justify-between lg:mt-20">
       <Lightbox images={images} />
       <ProductInfo productInfo={productInfo} />
     </div>

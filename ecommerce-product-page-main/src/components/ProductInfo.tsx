@@ -43,7 +43,7 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
           </h4>
         </div>
         <div className="flex flex-col lg:flex-row lg:space-x-5 my-6">
-          <div className="flex flex-row bg-gray-200 rounded-lg mb-5 h-14">
+          <div className="flex flex-row bg-gray-100 rounded-lg mb-5 h-14">
             <div
               onClick={() => {
                 if (count > 0) setCount(count - 1);
