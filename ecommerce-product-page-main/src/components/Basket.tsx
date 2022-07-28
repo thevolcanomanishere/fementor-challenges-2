@@ -5,7 +5,7 @@ export const Basket = () => {
   const [showBasket, setShowBasket] = useState(false);
 
   const basketStyle = showBasket
-    ? "flex flex-col justify-start w-[20rem] absolute top-11 -right-36 border rounded-lg bg-[#F5F6FA] shadow-xl mr-10"
+    ? "flex flex-col justify-start w-[20rem] absolute top-11 -right-36 border rounded-lg bg-white shadow-xl mr-10"
     : "hidden";
   return (
     <div className="m-auto relative">
