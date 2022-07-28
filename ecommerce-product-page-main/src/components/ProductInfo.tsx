@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ReactComponent as IconBasketWhite } from "../../public/icon-cart-white.svg";
+import CartContext from "../contexts/CartContext";
 
 export interface IProductInfo {
   companyName: string;
@@ -11,6 +12,29 @@ export interface IProductInfo {
 
 const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
   const [count, setCount] = useState(0);
+  const { cart, setCart } = useContext(CartContext);
+
+  const updateCart = () => {
+    if (count > 0) {
+      if (cart) {
+        const products = [...cart, ...new Array(count).fill(productInfo)];
+        return setCart(products);
+      }
+      // fill an array with the amount of count
+      const products = [...new Array(count).fill(productInfo)];
+      return setCart(products);
+    }
+    if (cart) {
+      const newCart = [...cart, productInfo];
+      return setCart(newCart);
+    }
+    return setCart([productInfo]);
+  };
+
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
+
   return (
     <section className="max-w-[480px] flex flex-col mx-auto">
       <div className="mx-8 sm:mx-0">
@@ -62,7 +86,10 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
               +
             </div>
           </div>
-          <button className="bg-[#EF843A] text-white h-14 space-x-3 p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300">
+          <button
+            onClick={() => updateCart()}
+            className="bg-[#EF843A] text-white h-14 space-x-3 p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300"
+          >
             <span className=" flex flex-row space-x-3 justify-center">
               <IconBasketWhite />
               <p className="font-sans">Add to cart</p>
