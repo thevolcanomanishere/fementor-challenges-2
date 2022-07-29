@@ -32,10 +32,6 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
     return setCart([productInfo]);
   };
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
-
   return (
     <section className="max-w-[480px] flex flex-col mx-auto">
       <div className="mx-8 sm:mx-0">
