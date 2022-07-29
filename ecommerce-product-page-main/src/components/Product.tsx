@@ -17,6 +17,7 @@ const Product = () => {
     the weather can offer.`,
     price: 250,
     discountPercentage: 50,
+    images,
   };
 
   return (

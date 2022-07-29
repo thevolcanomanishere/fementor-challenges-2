@@ -1,6 +1,7 @@
 import autoAnimate from "@formkit/auto-animate";
 import { useContext, useEffect, useRef, useState } from "react";
 import { ReactComponent as IconBasket } from "../../public/icon-cart.svg";
+import { ReactComponent as IconDeleteBasket } from "../../public/icon-delete.svg";
 import CartContext from "../contexts/CartContext";
 
 export const Basket = () => {
@@ -34,6 +35,10 @@ export const Basket = () => {
     }
   }, [cart]);
 
+  const createImageUri = (imageUri: string) => {
+    return new URL(imageUri, import.meta.url).href;
+  };
+
   return (
     <div ref={parent} className="m-auto relative">
       <div
@@ -41,7 +46,7 @@ export const Basket = () => {
         onClick={() => setShowBasket(!showBasket)}
       >
         <IconBasket />
-        {cart && (
+        {cart && cart.length > 0 && (
           <p className="rounded-full text-center -p-1 bg-orange-400 text-white text-sm h-5 w-fit px-1 absolute font-sans -top-3 -right-2">
             {cart?.length}
           </p>
@@ -65,11 +70,35 @@ export const Basket = () => {
                 <div className="flex flex-row">
                   <img
                     className="h-14 w-14 rounded"
-                    src="https://picsum.photos/200"
+                    src={createImageUri(cart[0].images[0])}
                     alt="Cart item picture"
                   />
                   <div className="flex flex-col">
-                    <p className="">{cart[0].name}</p>
+                    <p className="font-sans ml-2 text-gray-600 text-xl">
+                      {cart[0].productName}
+                    </p>
+                    <div className="flex flex-row">
+                      <p className="font-sans ml-2 text-xl text-gray-600">
+                        ${cart[0].price * (cart[0].discountPercentage / 100)} x{" "}
+                        {cart.length}{" "}
+                        <span className="font-bold pt-1 text-black">
+                          $
+                          {cart[0].price *
+                            (cart[0].discountPercentage / 100) *
+                            cart.length}
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    onClick={() => {
+                      // remove item at the end of the cart array and return array
+                      const newCart = cart.slice(0, -1);
+                      setCart(newCart);
+                    }}
+                    className="m-auto pl-5"
+                  >
+                    <IconDeleteBasket />
                   </div>
                 </div>
                 <button className="bg-orange-400 text-white rounded-lg h-2/5">

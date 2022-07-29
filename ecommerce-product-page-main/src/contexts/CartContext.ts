@@ -1,10 +1,7 @@
 import { createContext } from "react";
+import { IProductInfo } from "../components/ProductInfo";
 
-type Cart = {
-  imageUrl: string;
-  name: string;
-  price: number;
-}[];
+type Cart = IProductInfo[];
 
 export interface ICartContext {
   cart: Cart | undefined;

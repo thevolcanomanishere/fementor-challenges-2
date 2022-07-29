@@ -8,6 +8,7 @@ export interface IProductInfo {
   description: string;
   price: number;
   discountPercentage: number;
+  images: string[];
 }
 
 const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
