@@ -1,18 +1,33 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ReactComponent as IconBasket } from "../../public/icon-cart.svg";
 import CartContext from "../contexts/CartContext";
 
 export const Basket = () => {
   const [showBasket, setShowBasket] = useState(false);
   const { cart, setCart } = useContext(CartContext);
+  const [cartBounce, setCartBounce] = useState(false);
 
   const basketStyle = showBasket
     ? "flex flex-col justify-start w-[20rem] absolute top-11 -right-36 border rounded-lg bg-white shadow-xl mr-10"
     : "hidden";
+
+  const cartBounceStyle = cartBounce
+    ? `cursor-pointer animate-bounce-short`
+    : "cursor-pointer";
+
+  useEffect(() => {
+    if (cart && cart.length > 0) {
+      setCartBounce(true);
+      setInterval(() => {
+        setCartBounce(false);
+      }, 5000);
+    }
+  }, [cart]);
+
   return (
     <div className="m-auto relative">
       <div
-        className="cursor-pointer"
+        className={cartBounceStyle}
         onClick={() => setShowBasket(!showBasket)}
       >
         <IconBasket />

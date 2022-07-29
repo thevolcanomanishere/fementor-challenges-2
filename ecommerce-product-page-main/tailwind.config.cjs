@@ -6,6 +6,10 @@ module.exports = {
       colors: {
         scoreColor: "#6061A1",
       },
+      animation: {
+        // Bounces for a total of 5 seconds
+        "bounce-short": "bounce 1s ease-in-out 5",
+      },
     },
   },
   plugins: [],

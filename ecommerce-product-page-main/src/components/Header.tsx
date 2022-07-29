@@ -1,18 +1,31 @@
-import React from "react";
 import { Basket } from "./Basket";
 import Nav from "./Nav";
 import { ReactComponent as IconLogo } from "../../public/logo.svg";
 import { ReactComponent as IconMenu } from "../../public/icon-menu.svg";
 import ImageAvatar from "../../public/image-avatar.png";
+import MobileMenu from "./MobileMenu";
+import { useEffect, useRef, useState } from "react";
+import autoAnimate from "@formkit/auto-animate";
 
 const Header = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const parent = useRef(null);
+
+  useEffect(() => {
+    parent.current && autoAnimate(parent.current, { duration: 100 });
+  }, [parent]);
+
   return (
     <header className="flex flex-col ml-4 lg:ml-0">
       <div className="flex flex-row justify-between">
-        <div className="flex flex-row">
-          <div className="my-auto block pt-1 mr-6 lg:hidden">
+        <div ref={parent} className="flex flex-row">
+          <div
+            onClick={() => setShowMenu(true)}
+            className="flex items-center h-12 w-12 lg:hidden"
+          >
             <IconMenu />
           </div>
+          {showMenu && <MobileMenu setShowMenu={setShowMenu} />}
           <div className="my-auto">
             <IconLogo />
           </div>
