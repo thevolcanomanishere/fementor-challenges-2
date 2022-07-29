@@ -38,9 +38,7 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
         <h3 className="text-orange-400 uppercase mb-6 font-bold mt-12">
           {productInfo.companyName}
         </h3>
-        <h1 className="text-5xl font-semibold mb-10">
-          {productInfo.productName}
-        </h1>
+        <h1 className="text-5xl font-[700] mb-10">{productInfo.productName}</h1>
         <p className="font-sans my-4 mb-6 text-gray-500">
           {productInfo.description}
         </p>
@@ -85,7 +83,7 @@ const ProductInfo = ({ productInfo }: { productInfo: IProductInfo }) => {
           </div>
           <button
             onClick={() => updateCart()}
-            className="bg-[#EF843A] text-white h-14 space-x-3 p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300"
+            className="bg-turboOrange text-white h-14 space-x-3 p-4 lg:w-3/5 rounded-lg shadow-lg shadow-orange-300"
           >
             <span className=" flex flex-row space-x-3 justify-center">
               <IconBasketWhite />

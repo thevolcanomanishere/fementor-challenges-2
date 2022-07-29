@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       colors: {
         scoreColor: "#6061A1",
+        turboOrange: "hsl(26, 100%, 55%)",
       },
       animation: {
         // Bounces for a total of 5 seconds

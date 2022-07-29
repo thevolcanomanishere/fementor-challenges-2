@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Kumbh+Sans');
+@import url('https://fonts.googleapis.com/css?family=Kumbh+Sans:400,700');
 
 
 @tailwind base;
@@ -6,8 +6,8 @@
 @tailwind utilities;
 
 @layer base {
-  p {
-    font-family: DMSans;
+  html {
+    font-family: 'Kumbh Sans';
   }
 }
 /* 
