@@ -23,10 +23,14 @@ export const Basket = () => {
 
   useEffect(() => {
     if (cart && cart.length > 0) {
+      if (cartBounce === true) {
+        setCartBounce(false);
+      }
       setCartBounce(true);
-      setInterval(() => {
+      const timerId = setInterval(() => {
         setCartBounce(false);
       }, 5000);
+      return () => clearInterval(timerId);
     }
   }, [cart]);
 
@@ -37,6 +41,9 @@ export const Basket = () => {
         onClick={() => setShowBasket(!showBasket)}
       >
         <IconBasket />
+        <p className="rounded-full text-center absolute font-sans -top-5 -right-3">
+          {cart?.length}
+        </p>
       </div>
       {showBasket && (
         <section className={basketStyle}>
