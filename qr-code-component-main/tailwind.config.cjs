@@ -12,6 +12,8 @@ module.exports = {
       animation: {
         // Bounces for a total of 5 seconds
         "bounce-short": "bounce 1s ease-in-out 5",
+        "lift-off":
+          "transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300",
       },
     },
   },

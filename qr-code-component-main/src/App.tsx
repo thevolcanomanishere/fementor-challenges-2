@@ -9,7 +9,7 @@ const App = () => {
     to-qrBlue
     background-animate"
     >
-      <div className="text-center max-w-sm m-5 border rounded-2xl bg-white">
+      <div className="text-center max-w-sm m-5 border rounded-2xl bg-white transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 duration-300">
         <div className="flex flex-col shadow-xl rounded-2xl">
           <img
             className="rounded-xl m-4"
