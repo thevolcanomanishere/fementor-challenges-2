@@ -21,7 +21,7 @@ const App = () => {
               Improve your front-end skills by building projects
             </h1>
             <p className="text-lg text-gray-400 pb-4">
-              Scan the QR code to visit Frontend Mento and take your coding
+              Scan the QR code to visit Frontend Mentor and take your coding
               skils to the next level
             </p>
           </div>
