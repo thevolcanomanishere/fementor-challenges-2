@@ -35,7 +35,11 @@ const Header = () => {
         </div>
         <div className=" flex flex-row space-x-10 mr-5">
           <Basket />
-          <img className="h-12 w-12" src={ImageAvatar} alt="Profile picture" />
+          <img
+            className="h-12 w-12 hover:outline hover:outline-turboOrange hover:border-offset rounded-full"
+            src={ImageAvatar}
+            alt="Profile picture"
+          />
         </div>
       </div>
       <div className="border-b mt-5" />
