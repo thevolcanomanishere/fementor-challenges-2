@@ -16,7 +16,7 @@ const App = () => {
             src="/image-qr-code.png"
             alt="QR code"
           />
-          <div className="flex flex-col space-y-3 px-10 py-5">
+          <div className="flex flex-col space-y-3 px-7 py-5">
             <h1 className="font-bold text-xl">
               Improve your front-end skills by building projects
             </h1>
