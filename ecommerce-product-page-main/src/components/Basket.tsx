@@ -14,7 +14,7 @@ export const Basket = () => {
   }, [parent]);
 
   const basketStyle = showBasket
-    ? "flex flex-col justify-start w-[20rem] absolute top-11 -right-36 border rounded-lg bg-white shadow-xl mr-10"
+    ? "flex flex-col justify-start w-[25rem] absolute top-11 -right-96 md:-right-52 border rounded-lg bg-white shadow-xl md:mr-20 xl:mr-10"
     : "hidden";
 
   const cartBounceStyle = cartBounce
@@ -41,9 +41,11 @@ export const Basket = () => {
         onClick={() => setShowBasket(!showBasket)}
       >
         <IconBasket />
-        <p className="rounded-full text-center absolute font-sans -top-5 -right-3">
-          {cart?.length}
-        </p>
+        {cart && (
+          <p className="rounded-full text-center -p-1 bg-orange-400 text-white text-sm h-5 w-fit px-1 absolute font-sans -top-3 -right-2">
+            {cart?.length}
+          </p>
+        )}
       </div>
       {showBasket && (
         <section className={basketStyle}>
@@ -57,9 +59,23 @@ export const Basket = () => {
             </div>
           </div>
           <div className="border-b" />
-          <div className="flex min-h-fit">
+          <div className="flex h-52">
             {cart?.length ? (
-              <h1>{cart.length}</h1>
+              <div className="flex flex-col flex-grow justify-between px-5 py-8">
+                <div className="flex flex-row">
+                  <img
+                    className="h-14 w-14 rounded"
+                    src="https://picsum.photos/200"
+                    alt="Cart item picture"
+                  />
+                  <div className="flex flex-col">
+                    <p className="">{cart[0].name}</p>
+                  </div>
+                </div>
+                <button className="bg-orange-400 text-white rounded-lg h-2/5">
+                  Checkout
+                </button>
+              </div>
             ) : (
               <h2 className="m-auto p-20 text-gray-500 font-semibold">
                 Your cart is empty.
