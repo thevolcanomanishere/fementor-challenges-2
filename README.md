@@ -11,4 +11,4 @@ _Tech_: React, Tailwind, Vite
 3. <a href="https://comments-section-eight.vercel.app/" target="_blank">Comments section</a>
 4. <a href="https://ecommerce-product-main-page.vercel.app/" target="_blank">Ecommerce product main page</a>
 5. <a href="https://qr-code-fementor.vercel.app/" target="_blank">Qr code component</a>
-6. <a href="https://qr-code-fementor.vercel.app/" target="_blank">Order summary component</a>
+6. <a href="https://order-summary-component-69.vercel.app/" target="_blank">Order summary component</a>
