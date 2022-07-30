@@ -3,15 +3,10 @@ import { ReactComponent as IconMusic } from "../public/icon-music.svg";
 import Waves from "./Waves";
 
 const App = () => {
+  const createImageUri = (imageUri: string) => {
+    return new URL(imageUri, import.meta.url).href;
+  };
   return (
-    // <main
-    //   className="flex justify-center items-center h-screen bg-gradient-to-r
-    // from-blue-200
-    // via-white
-    // to-qrBlue
-    // background-animate"
-    // ></main>
-
     <main className="flex justify-center items-center h-screen">
       <div className="flex flex-col justify-between absolute h-screen w-screen z-0">
         <Waves viewBox="0 0 1440 320" />
@@ -19,11 +14,11 @@ const App = () => {
           <Waves viewBox="0 0 1440 320" />
         </div>
       </div>
-      <div className="flex flex-col justify-center text-center rounded-xl shadow-xl border w-96 z-10">
+      <div className="flex flex-col justify-center text-center rounded-xl shadow-xl border w-96 z-10 m-4">
         <div>
           <img
             className="rounded-t-2xl"
-            src="../public/illustration-hero.svg"
+            src={createImageUri("../public/illustration-hero.svg")}
             alt="Hero"
           />
         </div>
