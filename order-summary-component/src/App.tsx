@@ -1,5 +1,7 @@
 /// <reference types="vite-plugin-svgr/client" />
 import { ReactComponent as IconMusic } from "../public/icon-music.svg";
+import Hero from "./Hero";
+
 import Waves from "./Waves";
 
 const App = () => {
@@ -14,14 +16,8 @@ const App = () => {
           <Waves viewBox="0 0 1440 320" />
         </div>
       </div>
-      <div className="flex flex-col justify-center text-center rounded-xl shadow-xl border w-96 z-10 m-4">
-        <div>
-          <img
-            className="rounded-t-2xl"
-            src={createImageUri("../public/illustration-hero.svg")}
-            alt="Hero"
-          />
-        </div>
+      <div className="flex flex-col justify-center text-center rounded-xl shadow-xl w-96 z-10 m-4">
+        <Hero style="rounded-t-lg w-96" />
         <div className="flex flex-col p-10 space-y-5 bg-white rounded-b-xl">
           <div className="flex max-w-xs flex-col justify-center mx-auto align-middle text-center">
             <h1 className="text-2xl font-bold mb-5">Order Summary</h1>
@@ -43,7 +39,7 @@ const App = () => {
             </span>
           </div>
 
-          <button className="bg-blue-800 hover:bg-[#756DE9] hover:shadow-xl h-12 text-white rounded-lg select-none">
+          <button className="bg-blue-800 hover:bg-[#756DE9] hover:shadow-xl h-12 text-white rounded-lg select-none animate-wiggle">
             Proceed to Payment
           </button>
 
