@@ -4,6 +4,7 @@ const Hero = ({ style }: { style: string }) => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       className={style}
+      viewBox="0 0 450 220"
     >
       <defs>
         <path id="a" d="M0 0h450v220H0z" />
