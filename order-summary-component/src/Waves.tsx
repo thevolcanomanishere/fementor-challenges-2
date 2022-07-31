@@ -52,7 +52,7 @@ const Waves = ({ viewBox }: { viewBox: string }) => {
         <path
           id="sineWave"
           fill="#0099ff"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
           d="M0,160 C320,300,420,300,740,160 C1060,20,1120,20,1440,160 V0 H0"
         />
       </defs>

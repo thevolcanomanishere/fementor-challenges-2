@@ -1,25 +1,51 @@
 /// <reference types="vite-plugin-svgr/client" />
+import { useCallback, useEffect, useState } from "react";
 import { ReactComponent as IconMusic } from "../public/icon-music.svg";
 import Hero from "./Hero";
-
 import Waves from "./Waves";
 
 const App = () => {
-  const createImageUri = (imageUri: string) => {
-    return new URL(imageUri, import.meta.url).href;
-  };
+  const [documentDimensions, setDocumentDimensions] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
+
+  // const handleSizeChange = useCallback((size: typeof documentDimensions) => {
+  //   console.log(size);
+  //   setDocumentDimensions(size);
+  // }, []);
+  // detect document resize and set documentDimentions
+
+  useEffect(() => {
+    window.addEventListener("resize", (e: any) => {
+      setDocumentDimensions({
+        width: e.target.innerWidth,
+        height: e.target.innerHeight,
+      });
+    });
+    return () =>
+      window.removeEventListener("resize", (e: any) =>
+        setDocumentDimensions({
+          width: e.target.innerWidth,
+          height: e.target.innerHeight,
+        })
+      );
+  }, [window]);
+
+  const wavesViewBox = `0 0 1440 ${documentDimensions.height / 2}`;
+
   return (
-    <main className="flex justify-center items-center h-screen">
-      <div className="flex flex-col justify-between absolute h-screen w-screen z-0">
-        <Waves viewBox="0 0 1440 320" />
+    <main className="flex justify-center items-center h-screen overflow-hidden">
+      <div className="flex flex-col justify-between absolute h-screen w-screen z-0 overflow-hidden">
+        <Waves viewBox={wavesViewBox} />
         <div className="rotate-180">
-          <Waves viewBox="0 0 1440 320" />
+          <Waves viewBox={wavesViewBox} />
         </div>
       </div>
-      <div className="flex flex-col justify-center text-center rounded-xl shadow-xl w-96 z-10 m-4">
-        <Hero style="rounded-t-lg w-96" />
+      <div className="flex flex-col justify-center text-center rounded-xl max-w-sm shadow-xl z-10 mx-5">
+        <Hero style="rounded-t-lg" />
         <div className="flex flex-col p-10 space-y-5 bg-white rounded-b-xl">
-          <div className="flex max-w-xs flex-col justify-center mx-auto align-middle text-center">
+          <div className="flex flex-col justify-center mx-auto align-middle text-center">
             <h1 className="text-2xl font-bold mb-5">Order Summary</h1>
             <p className="text-gray-600 text-sm sm:text-md">
               You can now listen to millions of songs, audiobooks and podcasts
@@ -43,7 +69,7 @@ const App = () => {
             Proceed to Payment
           </button>
 
-          <span>Cancel Order</span>
+          <span className="text-gray-600">Cancel Order</span>
         </div>
       </div>
     </main>
