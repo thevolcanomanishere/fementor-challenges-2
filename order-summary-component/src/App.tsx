@@ -52,7 +52,7 @@ const App = () => {
               on any device anywhere you like!
             </p>
           </div>
-          <div className="flex flex-row bg-gray-100 rounded-xl justify-between p-4">
+          <div className="flex flex-row bg-gray-100 rounded-xl justify-between p-3">
             <div className="flex flex-row">
               <IconMusic />
               <div className="flex flex-col ml-4 pt-1">
